@@ -110,6 +110,74 @@ function initApp() {
     setupEventListeners();
     loadRecent();
     setupThemeToggle();
+    initParticles();
+    setupHeaderScroll();
+}
+
+// ================= PARTICLE CANVAS =================
+function initParticles() {
+    const canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+        canvas.width  = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const particles = Array.from({ length: 55 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.8 + 0.4,
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.5 + 0.1
+    }));
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const isDark = !document.body.classList.contains('light-theme');
+        const color = isDark ? '167,139,250' : '124,58,237';
+
+        particles.forEach(p => {
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${color},${p.alpha})`;
+            ctx.fill();
+
+            p.x += p.dx;
+            p.y += p.dy;
+            if (p.x < 0 || p.x > canvas.width)  p.dx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        });
+
+        // Draw subtle lines between close particles
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                if (dist < 110) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(${color},${0.06 * (1 - dist / 110)})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+}
+
+// ================= HEADER SCROLL EFFECT =================
+function setupHeaderScroll() {
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 40);
+    });
 }
 
 // ================= THEME TOGGLE =================
@@ -130,7 +198,7 @@ function setupThemeToggle() {
 }
 
 // ================= RENDER FUNCTIONS =================
-function createProductCard(product) {
+function createProductCard(product, index = 0) {
     const bestPrice = getBestPrice(product.prices);
     const sortedPrices = sortPrices(product.prices);
     
@@ -149,7 +217,7 @@ function createProductCard(product) {
     `).join('');
 
     return `
-        <div class="product-card" data-id="${product.id}">
+        <div class="product-card fade-up" style="animation-delay: ${index * 0.08}s" data-id="${product.id}">
             <div class="product-image" onclick="saveToRecent('${product.id}')">
                 <img src="${product.image}" alt="${product.title}">
                 ${badgeHtml}
@@ -181,7 +249,7 @@ function renderCategories() {
 function renderTrending() {
     const grid = document.getElementById('trendingGrid');
     const trendingProducts = MOCK_PRODUCTS.filter(p => p.hot);
-    grid.innerHTML = trendingProducts.map(p => createProductCard(p)).join('');
+    grid.innerHTML = trendingProducts.map((p, idx) => createProductCard(p, idx)).join('');
 }
 
 function renderSearchTags() {
@@ -227,27 +295,42 @@ function setupEventListeners() {
     });
 }
 
+function generateSkeletons(count) {
+    return Array(count).fill(0).map(() => `
+        <div class="skeleton-card">
+            <div class="skeleton skeleton-img"></div>
+            <div class="skeleton-content">
+                <div class="skeleton skeleton-text-lg"></div>
+                <div class="skeleton skeleton-text-lg" style="width: 60%"></div>
+                <div class="skeleton skeleton-text-xl mt-4"></div>
+                <div class="skeleton skeleton-row mt-4"></div>
+                <div class="skeleton skeleton-row mt-2"></div>
+                <div class="skeleton skeleton-row mt-2"></div>
+            </div>
+        </div>
+    `).join('');
+}
+
 function executeSearch(query) {
     if (!query.trim()) return;
 
     const section = document.getElementById('resultsSection');
     const grid = document.getElementById('searchResultsGrid');
-    const loading = document.getElementById('loadingIndicator');
     const noResults = document.getElementById('noResultsMsg');
     const queryText = document.getElementById('searchQueryText');
+    const resultsCount = document.getElementById('resultsCount');
 
     section.style.display = 'block';
     section.scrollIntoView({ behavior: 'smooth' });
     
-    grid.innerHTML = '';
+    // Show Skeletons
     noResults.style.display = 'none';
-    loading.style.display = 'block';
+    resultsCount.innerText = 'Đang tìm kiếm...';
+    grid.innerHTML = generateSkeletons(6); // Show 6 skeleton cards
     queryText.innerText = query;
 
     // Simulate API delay
     setTimeout(() => {
-        loading.style.display = 'none';
-        
         // Simple search mock
         const q = query.toLowerCase();
         currentSearchResults = MOCK_PRODUCTS.filter(p => 
@@ -257,7 +340,7 @@ function executeSearch(query) {
 
         applyFilters(); // Apply default filters to results
         
-    }, 1200);
+    }, 1500);
 }
 
 function applyFilters() {
@@ -302,7 +385,7 @@ function applyFilters() {
         noResults.style.display = 'block';
     } else {
         noResults.style.display = 'none';
-        grid.innerHTML = filtered.map(p => createProductCard(p)).join('');
+        grid.innerHTML = filtered.map((p, idx) => createProductCard(p, idx)).join('');
     }
     
     document.getElementById('resultsCount').innerText = `${filtered.length} sản phẩm`;
@@ -331,7 +414,7 @@ function loadRecent() {
 
     section.style.display = 'block';
     const recentProducts = recentIds.map(id => MOCK_PRODUCTS.find(p => p.id === id)).filter(Boolean);
-    grid.innerHTML = recentProducts.map(p => createProductCard(p)).join('');
+    grid.innerHTML = recentProducts.map((p, idx) => createProductCard(p, idx)).join('');
 }
 
 // ================= AFFILIATE REDIRECT MODAL =================
