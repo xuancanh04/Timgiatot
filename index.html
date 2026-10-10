@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TìmGiáTốt - So Sánh Giá Thông Minh | Shopee, Lazada, Tiki, TikTok</title>
-    <meta name="description" content="So sánh giá realtime từ Shopee, Lazada, Tiki, TikTok Shop. Tìm giá tốt nhất chỉ trong một lần chạm.">
+    <title>DealNgon - Săn Deal & Khuyến Mãi Khủng | Shopee, Lazada, Tiki, TikTok</title>
+    <meta name="description" content="Nền tảng tổng hợp ưu đãi, voucher và khuyến mãi thời gian thực từ Shopee, Lazada, Tiki, TikTok Shop. Săn deal ngon nhất mỗi ngày.">
     <link rel="stylesheet" href="/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Ccircle cx='14' cy='18' r='12' fill='%23ea580c' /%3E%3Crect x='16' y='6' width='14' height='24' rx='6' fill='%23fcd34d' fill-opacity='0.95'/%3E%3C/svg%3E">
 </head>
 <body>
-    <!-- Background Effects -->
-    <div class="background-effects">
-        <div class="glow-orb orb-1"></div>
-        <div class="glow-orb orb-2"></div>
-        <div class="glow-orb orb-3"></div>
-    </div>
+    <!-- No Background Effects for E-commerce Theme -->
 
     <!-- Mobile Menu Overlay -->
     <div class="mobile-menu-overlay" id="mobileMenu">
@@ -38,18 +34,36 @@
                     <circle cx="14" cy="18" r="12" fill="#ea580c" />
                     <rect x="16" y="6" width="14" height="24" rx="6" fill="#fcd34d" fill-opacity="0.95"/>
                 </svg>
-                <span class="logo-text">TìmGiáTốt</span>
+                <span class="logo-text">Deal<span>Ngon</span></span>
             </a>
 
-            <nav class="main-nav">
-                <a href="#" class="active">Trang Chủ</a>
-                <a href="#categories">Danh Mục</a>
-                <a href="#trending">Hot Deal</a>
-                <a href="#recent">Vừa Xem</a>
+            <nav class="main-nav header-search">
+                <div class="header-search-box">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm...">
+                    <button class="btn-search" id="btnSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
             </nav>
 
             <div class="user-actions">
-                <button class="btn-icon" id="btnThemeToggle" title="Đổi giao diện"><i class="fa-solid fa-moon"></i></button>
+                <button class="notif-btn" title="Thông báo / Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notif-badge">3</span>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-toggle-btn" id="btnLangToggle" title="Đổi ngôn ngữ / Change language">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="globe-icon" style="margin-right: 2px;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span id="currentLangText">Tiếng Việt</span>
+                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                    </button>
+                    <div class="lang-menu" id="langMenu">
+                        <div class="lang-option active" data-lang="vi">Tiếng Việt</div>
+                        <div class="lang-option" data-lang="en">English</div>
+                    </div>
+                </div>
                 <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
@@ -57,13 +71,9 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <canvas id="heroCanvas"></canvas>
         <div class="container hero-content">
 
-            <div class="hero-badge">
-                <i class="fa-solid fa-star"></i>
-                Nền tảng so sánh giá #1 Việt Nam
-            </div>
+
 
             <h1 class="hero-title">
                 Tìm Giá Tốt Nhất.
@@ -97,18 +107,7 @@
                 </div>
             </div>
 
-            <!-- Search -->
-            <div class="search-container">
-                <div class="search-box">
-                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                    <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm (VD: iPhone 15, Sony WH-1000XM5, Son MAC...)">
-                    <button class="btn-search" id="btnSearch"><i class="fa-solid fa-bolt"></i> So Sánh Ngay</button>
-                </div>
-                <div class="search-tags" id="searchTags">
-                    <span>Gợi ý:</span>
-                    <!-- Tags generated by JS -->
-                </div>
-            </div>
+            <!-- Search bar was moved to header -->
 
             <!-- Platform Badges -->
             <div class="platform-badges">
@@ -238,9 +237,9 @@
                         <circle cx="14" cy="18" r="12" fill="#ea580c" />
                         <rect x="16" y="6" width="14" height="24" rx="6" fill="#fcd34d" fill-opacity="0.95"/>
                     </svg>
-                    <span class="logo-text">TìmGiáTốt</span>
+                    <span class="logo-text">Deal<span>Ngon</span></span>
                 </a>
-                <p>Nền tảng so sánh giá thông minh. Giúp bạn tìm kiếm, so sánh và mua sắm dễ dàng với mức giá tốt nhất từ các sàn TMĐT hàng đầu Việt Nam.</p>
+                <p>Nền tảng tổng hợp ưu đãi và khuyến mãi mỗi ngày. Giúp bạn săn deal cực hời và mua sắm siêu tiết kiệm từ các sàn TMĐT hàng đầu Việt Nam.</p>
             </div>
             <div class="footer-links">
                 <h3>Về chúng tôi</h3>
@@ -258,7 +257,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p>© 2026 TìmGiáTốt — Mọi quyền được bảo lưu.</p>
+            <p>© 2026 DealNgon — Mọi quyền được bảo lưu.</p>
         </div>
     </footer>
 

@@ -74,13 +74,72 @@ const MOCK_PRODUCTS = [
     }
 ];
 
+const I18N = {
+    vi: {
+        'nav-1': 'Trang Chủ', 'nav-2': 'Danh Mục', 'nav-3': 'Hot Deal', 'nav-4': 'Vừa Xem',
+        'hero-t1': 'Tìm Giá Tốt Nhất.', 'hero-t2': 'Chỉ Bằng Một Lần Chạm.',
+        'hero-sub': 'Hệ thống tổng hợp deal sốc, mã giảm giá và siêu ưu đãi thời gian thực từ các sàn TMĐT lớn nhất — Shopee, Lazada, Tiki, TikTok Shop.',
+        'stat-1': 'SẢN PHẨM', 'stat-2': 'SÀN TMĐT', 'stat-3': 'TIẾT KIỆM', 'stat-4': 'NGƯỜI DÙNG',
+        'search-placeholder': 'Nhập tên sản phẩm (VD: iPhone 15, Sony WH-1000XM5, Son MAC...)',
+        'search-btn': '<i class="fa-solid fa-bolt"></i> So Sánh Ngay',
+        'search-tags-label': 'Gợi ý:',
+        'cat-label': 'Danh Mục Phổ Biến',
+        'sort-label': 'Sắp xếp',
+        'sort-opt-1': 'Độ liên quan', 'sort-opt-2': 'Giá thấp → cao', 'sort-opt-3': 'Giá cao → thấp',
+        'price-label': 'Khoảng giá', 'price-min': 'TỪ', 'price-max': 'ĐẾN', 'price-btn': 'Áp dụng',
+        'plat-label': 'Sàn thương mại',
+        'res-prefix': 'Kết quả: ', 'res-suffix': ' sản phẩm',
+        'loading-txt': 'Đang tổng hợp dữ liệu giá từ các sàn...',
+        'no-res-h3': 'Không tìm thấy sản phẩm!', 'no-res-p': 'Vui lòng thử lại với từ khóa khác.',
+        'trend-h2': 'Sản Phẩm <span>Đang Hot</span> 🔥', 'trend-view': 'Xem tất cả <i class="fa-solid fa-arrow-right"></i>',
+        'rec-h2': 'Bạn <span>Vừa Xem</span>', 'rec-clear': '<i class="fa-solid fa-trash-can"></i> Xóa lịch sử',
+        'redir-h2': 'Đang chuyển hướng...', 'redir-p1': 'Đang đưa bạn đến ', 'redir-p2': ' với giá tốt nhất',
+        'redir-small1': 'Nếu trình duyệt không tự chuyển, ', 'redir-small2': 'bấm vào đây',
+        'foot-desc': 'Nền tảng tổng hợp ưu đãi và khuyến mãi mỗi ngày. Giúp bạn săn deal cực hời và mua sắm siêu tiết kiệm từ các sàn TMĐT hàng đầu Việt Nam.',
+        'foot-h3-1': 'Về chúng tôi', 'foot-l1-1': 'Giới thiệu nền tảng', 'foot-l1-2': 'Liên hệ hỗ trợ', 'foot-l1-3': 'Chính sách bảo mật', 'foot-l1-4': 'Điều khoản sử dụng',
+        'foot-h3-2': 'Đối tác', 'foot-l2-1': 'Trở thành Affiliate', 'foot-l2-2': 'API Săn Deal', 'foot-l2-3': 'Quảng cáo sản phẩm', 'foot-l2-4': 'Blog chia sẻ',
+        'foot-copy': '© 2026 TìmGiáTốt — Mọi quyền được bảo lưu.',
+        'cat-phone': 'Điện Thoại', 'cat-laptop': 'Laptop', 'cat-audio': 'Tai Nghe', 'cat-beauty': 'Mỹ Phẩm', 'cat-home': 'Gia Dụng', 'cat-gaming': 'Gaming',
+        'card-best-price': 'Giá tốt nhất từ:', 'card-buy': 'Tới nơi bán'
+    },
+    en: {
+        'nav-1': 'Home', 'nav-2': 'Categories', 'nav-3': 'Trending', 'nav-4': 'Recent',
+        'hero-t1': 'Find Best Prices.', 'hero-t2': 'Just One Tap Away.',
+        'hero-sub': 'Real-time price analysis and comparison from top platforms — Shopee, Lazada, Tiki, TikTok Shop.',
+        'stat-1': 'PRODUCTS', 'stat-2': 'PLATFORMS', 'stat-3': 'SAVINGS', 'stat-4': 'USERS',
+        'search-placeholder': 'Enter product name (e.g. iPhone 15...)',
+        'search-btn': '<i class="fa-solid fa-bolt"></i> Compare Now',
+        'search-tags-label': 'Suggestions:',
+        'cat-label': 'Popular Categories',
+        'sort-label': 'Sort By',
+        'sort-opt-1': 'Relevance', 'sort-opt-2': 'Price Low → High', 'sort-opt-3': 'Price High → Low',
+        'price-label': 'Price Range', 'price-min': 'MIN', 'price-max': 'MAX', 'price-btn': 'Apply',
+        'plat-label': 'Platforms',
+        'res-prefix': 'Results: ', 'res-suffix': ' products',
+        'loading-txt': 'Aggregating price data from platforms...',
+        'no-res-h3': 'No products found!', 'no-res-p': 'Please try again with different keywords.',
+        'trend-h2': '<span>Trending</span> Products 🔥', 'trend-view': 'View All <i class="fa-solid fa-arrow-right"></i>',
+        'rec-h2': '<span>Recently</span> Viewed', 'rec-clear': '<i class="fa-solid fa-trash-can"></i> Clear History',
+        'redir-h2': 'Redirecting...', 'redir-p1': 'Taking you to ', 'redir-p2': ' for the best price',
+        'redir-small1': 'If not redirected automatically, ', 'redir-small2': 'click here',
+        'foot-desc': 'Smart price comparison platform. Search, compare, and shop easily at the best prices from top e-commerce platforms in Vietnam.',
+        'foot-h3-1': 'About Us', 'foot-l1-1': 'Platform Intro', 'foot-l1-2': 'Support Contact', 'foot-l1-3': 'Privacy Policy', 'foot-l1-4': 'Terms of Use',
+        'foot-h3-2': 'Partners', 'foot-l2-1': 'Become an Affiliate', 'foot-l2-2': 'Price API', 'foot-l2-3': 'Advertising', 'foot-l2-4': 'Blog',
+        'foot-copy': '© 2026 TimGiaTot — All rights reserved.',
+        'cat-phone': 'Phones', 'cat-laptop': 'Laptops', 'cat-audio': 'Audio', 'cat-beauty': 'Beauty', 'cat-home': 'Home', 'cat-gaming': 'Gaming',
+        'card-best-price': 'Best price from:', 'card-buy': 'Go to store'
+    }
+};
+
+let currentLang = localStorage.getItem('lang') || 'vi';
+
 const CATEGORIES = [
-    { id: 'phone', name: 'Điện Thoại', icon: 'fa-mobile-screen' },
-    { id: 'laptop', name: 'Laptop', icon: 'fa-laptop' },
-    { id: 'audio', name: 'Tai Nghe', icon: 'fa-headphones' },
-    { id: 'beauty', name: 'Mỹ Phẩm', icon: 'fa-spray-can' },
-    { id: 'home', name: 'Gia Dụng', icon: 'fa-blender' },
-    { id: 'gaming', name: 'Gaming', icon: 'fa-gamepad' }
+    { id: 'phone', key: 'cat-phone', icon: 'fa-mobile-screen' },
+    { id: 'laptop', key: 'cat-laptop', icon: 'fa-laptop' },
+    { id: 'audio', key: 'cat-audio', icon: 'fa-headphones' },
+    { id: 'beauty', key: 'cat-beauty', icon: 'fa-spray-can' },
+    { id: 'home', key: 'cat-home', icon: 'fa-blender' },
+    { id: 'gaming', key: 'cat-gaming', icon: 'fa-gamepad' }
 ];
 
 const PLATFORM_ICONS = {
@@ -108,11 +167,97 @@ function initApp() {
     renderTrending();
     renderSearchTags();
     setupEventListeners();
+    updateLanguageUI();
     loadRecent();
-    setupThemeToggle();
     initParticles();
     setupHeaderScroll();
 }
+
+function updateLanguageUI() {
+    const t = I18N[currentLang];
+    const set = (sel, key, isHtml = false) => {
+        const el = document.querySelector(sel);
+        if (el) isHtml ? el.innerHTML = t[key] : el.textContent = t[key];
+    };
+    const setPl = (sel, key) => {
+        const el = document.querySelector(sel);
+        if (el) el.placeholder = t[key];
+    };
+
+    
+
+    const ht = document.querySelector('.hero-title');
+    if(ht) ht.innerHTML = t['hero-t1'] + '\n<span class="line2">' + t['hero-t2'] + '</span>';
+    set('.hero-subtitle', 'hero-sub');
+    set('.stat-item:nth-child(1) .stat-label', 'stat-1');
+    set('.stat-item:nth-child(3) .stat-label', 'stat-2');
+    set('.stat-item:nth-child(5) .stat-label', 'stat-3');
+    set('.stat-item:nth-child(7) .stat-label', 'stat-4');
+    
+    setPl('#searchInput', 'search-placeholder');
+    const tags = document.querySelector('.search-tags span:first-child');
+    if(tags) tags.textContent = t['search-tags-label'];
+    
+    set('.section-label', 'cat-label');
+    set('#resultsSection .filter-group:nth-child(1) h3', 'sort-label');
+    set('#sortSelect option[value="relevance"]', 'sort-opt-1');
+    set('#sortSelect option[value="price-asc"]', 'sort-opt-2');
+    set('#sortSelect option[value="price-desc"]', 'sort-opt-3');
+    set('#resultsSection .filter-group:nth-child(2) h3', 'price-label');
+    setPl('#minPrice', 'price-min');
+    setPl('#maxPrice', 'price-max');
+    set('#btnApplyFilter', 'price-btn');
+    set('#resultsSection .filter-group:nth-child(3) h3', 'plat-label');
+    
+    set('#loadingIndicator p', 'loading-txt');
+    set('#noResultsMsg h3', 'no-res-h3');
+    set('#noResultsMsg p', 'no-res-p');
+    set('.trending-section .section-title h2', 'trend-h2', true);
+    set('.trending-section .section-title .view-all', 'trend-view', true);
+    set('.recent-section .section-title h2', 'rec-h2', true);
+    set('#btnClearRecent', 'rec-clear', true);
+    
+    set('#redirectModal h2', 'redir-h2');
+    const sm = document.querySelector('.small-text');
+    if(sm) sm.innerHTML = t['redir-small1'] + '<a href="#" id="manualRedirect">' + t['redir-small2'] + '</a>';
+    
+    set('.footer-brand p', 'foot-desc');
+    set('.footer-links:nth-child(2) h3', 'foot-h3-1');
+    set('.footer-links:nth-child(2) a:nth-of-type(1)', 'foot-l1-1');
+    set('.footer-links:nth-child(2) a:nth-of-type(2)', 'foot-l1-2');
+    set('.footer-links:nth-child(2) a:nth-of-type(3)', 'foot-l1-3');
+    set('.footer-links:nth-child(2) a:nth-of-type(4)', 'foot-l1-4');
+    
+    set('.footer-links:nth-child(3) h3', 'foot-h3-2');
+    set('.footer-links:nth-child(3) a:nth-of-type(1)', 'foot-l2-1');
+    set('.footer-links:nth-child(3) a:nth-of-type(2)', 'foot-l2-2');
+    set('.footer-links:nth-child(3) a:nth-of-type(3)', 'foot-l2-3');
+    set('.footer-links:nth-child(3) a:nth-of-type(4)', 'foot-l2-4');
+    set('.copyright p', 'foot-copy');
+
+    const currentLangText = document.getElementById('currentLangText');
+    if (currentLangText) {
+        currentLangText.textContent = currentLang === 'vi' ? 'Tiếng Việt' : 'English';
+    }
+    document.querySelectorAll('.lang-option').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.lang === currentLang);
+    });
+    renderCategories();
+    renderTrending();
+    if (document.getElementById('recent').style.display !== 'none') loadRecent();
+    
+    const query = document.getElementById('searchInput').value;
+    if (document.getElementById('resultsSection').style.display !== 'none') {
+        const queryEl = document.getElementById('searchQueryText');
+        if (queryEl) queryEl.parentElement.innerHTML = t['res-prefix'] + '<span id="searchQueryText" class="highlight-text">' + query + '</span>';
+        const cnt = document.getElementById('resultsCount');
+        if (cnt) cnt.textContent = parseInt(cnt.textContent) + t['res-suffix']; // Will just trigger a re-render soon or wait
+        // Just re-render the grid text to be safe
+        const res = window.lastResults || [];
+        renderSearchResults(res);
+    }
+}
+
 
 // ================= PARTICLE CANVAS =================
 function initParticles() {
@@ -184,16 +329,20 @@ function setupHeaderScroll() {
 function setupThemeToggle() {
     const btn = document.getElementById('btnThemeToggle');
     const isLight = localStorage.getItem('theme') === 'light';
+    
+    // Default is dark mode now in CSS. So only add light-theme if needed.
     if (isLight) {
         document.body.classList.add('light-theme');
-        btn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        btn.innerHTML = '<i class="fa-solid fa-moon"></i>'; // It's light, so show moon to switch to dark
+    } else {
+        btn.innerHTML = '<i class="fa-solid fa-sun"></i>'; // It's dark, so show sun to switch to light
     }
 
     btn.addEventListener('click', () => {
         document.body.classList.toggle('light-theme');
         const currentLight = document.body.classList.contains('light-theme');
         localStorage.setItem('theme', currentLight ? 'light' : 'dark');
-        btn.innerHTML = currentLight ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
+        btn.innerHTML = currentLight ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
     });
 }
 
@@ -212,7 +361,7 @@ function createProductCard(product, index = 0) {
                 ${PLATFORM_ICONS[p.platform]} ${PLATFORM_NAMES[p.platform]}
             </span>
             <span class="p-price">${formatPrice(p.price)}</span>
-            <button class="btn-buy ${p.platform}-bg" onclick="handleAffiliateClick('${p.platform}', '${p.link}', '${product.id}')">Tới nơi bán</button>
+            <button class="btn-buy ${p.platform}-bg" onclick="handleAffiliateClick('${p.platform}', '${p.link}', '${product.id}')">${I18N[currentLang]['card-buy']}</button>
         </div>
     `).join('');
 
@@ -225,7 +374,7 @@ function createProductCard(product, index = 0) {
             <div class="product-info">
                 <h3 class="product-title" onclick="saveToRecent('${product.id}')">${product.title}</h3>
                 <div class="price-container">
-                    <span class="text-muted" style="font-size:12px">Giá tốt nhất từ:</span><br>
+                    <span class="text-muted" style="font-size:12px">${I18N[currentLang]['card-best-price']}</span><br>
                     <span class="best-price">${formatPrice(bestPrice)}</span>
                 </div>
                 <div class="platform-prices">
@@ -238,12 +387,14 @@ function createProductCard(product, index = 0) {
 
 function renderCategories() {
     const grid = document.getElementById('categoriesGrid');
-    grid.innerHTML = CATEGORIES.map(c => `
-        <div class="cat-item" onclick="triggerSearch('${c.name}')">
+    grid.innerHTML = CATEGORIES.map(c => {
+        const catName = I18N[currentLang][c.key];
+        return `
+        <div class="cat-item" onclick="triggerSearch('${catName}')">
             <i class="fa-solid ${c.icon}"></i>
-            <span>${c.name}</span>
+            <span>${catName}</span>
         </div>
-    `).join('');
+    `}).join('');
 }
 
 function renderTrending() {
@@ -255,7 +406,9 @@ function renderTrending() {
 function renderSearchTags() {
     const tags = ['iPhone', 'Sony', 'MacBook', 'Nồi chiên', 'Son môi'];
     const container = document.getElementById('searchTags');
-    container.innerHTML += tags.map(t => `<span class="tag" onclick="triggerSearch('${t}')">${t}</span>`).join('');
+    if (container) {
+        container.innerHTML += tags.map(t => `<span class="tag" onclick="triggerSearch('${t}')">${t}</span>`).join('');
+    }
 }
 
 // ================= SEARCH & FILTER LOGIC =================
@@ -275,6 +428,34 @@ function setupEventListeners() {
     input.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') executeSearch(input.value);
     });
+
+    // Language Dropdown
+    const langDropdown = document.getElementById('langDropdown');
+    const btnLangToggle = document.getElementById('btnLangToggle');
+    if (langDropdown && btnLangToggle) {
+        btnLangToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('open');
+        });
+        
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            opt.addEventListener('click', (e) => {
+                const newLang = e.currentTarget.dataset.lang;
+                if (newLang !== currentLang) {
+                    currentLang = newLang;
+                    localStorage.setItem('lang', currentLang);
+                    updateLanguageUI();
+                }
+                langDropdown.classList.remove('open');
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!langDropdown.contains(e.target)) {
+                langDropdown.classList.remove('open');
+            }
+        });
+    }
 
     // Filters
     document.getElementById('btnApplyFilter').addEventListener('click', applyFilters);
