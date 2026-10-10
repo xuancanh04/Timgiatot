@@ -28,6 +28,35 @@
 
     <!-- Header -->
     <header id="mainHeader">
+        <div class="header-top">
+            <div class="container header-top-container">
+                <div class="header-top-left">
+                    <span>Kết nối <a href="#"><i class="fa-brands fa-facebook" style="margin-left: 4px;"></i></a> <a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+                </div>
+                <div class="header-top-right">
+                    <button class="header-top-btn" title="Thông báo / Notifications">
+                        <i class="fa-regular fa-bell"></i> Thông Báo
+                        <span class="notif-badge">3</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-toggle-btn" id="btnLangToggle" title="Đổi ngôn ngữ / Change language">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="globe-icon" style="margin-right: 2px;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                            </svg>
+                            <span class="lang-text">Tiếng Việt</span>
+                            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                        </button>
+                        <div class="lang-menu" id="langMenu">
+                            <div class="lang-option active" data-lang="vi">Tiếng Việt</div>
+                            <div class="lang-option" data-lang="en">English</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container header-container">
             <a href="#" class="logo">
                 <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
@@ -45,26 +74,10 @@
             </nav>
 
             <div class="user-actions">
-                <button class="notif-btn" title="Thông báo / Notifications">
+                <button class="notif-btn-mobile" title="Thông báo / Notifications">
                     <i class="fa-regular fa-bell"></i>
                     <span class="notif-badge">3</span>
                 </button>
-                <div class="lang-dropdown" id="langDropdown">
-                    <button class="lang-toggle-btn" id="btnLangToggle" title="Đổi ngôn ngữ / Change language">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="globe-icon" style="margin-right: 2px;">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                        </svg>
-                        <span id="currentLangText">Tiếng Việt</span>
-                        <i class="fa-solid fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="lang-menu" id="langMenu">
-                        <div class="lang-option active" data-lang="vi">Tiếng Việt</div>
-                        <div class="lang-option" data-lang="en">English</div>
-                    </div>
-                </div>
-                <button class="menu-toggle" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
     </header>
