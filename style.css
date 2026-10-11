@@ -795,7 +795,7 @@ footer {
 }
 .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 48px; margin-bottom: 48px;
 }
 .footer-brand p {

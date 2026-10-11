@@ -171,6 +171,7 @@ function initApp() {
     loadRecent();
     initParticles();
     setupHeaderScroll();
+    initVisitorStats();
 }
 
 function updateLanguageUI() {
@@ -615,4 +616,16 @@ window.handleAffiliateClick = function(platform, link, productId) {
         modal.classList.remove('active');
         window.open(link, '_blank');
     }, 2000);
+}
+
+// ================= VISITOR STATS SIMULATION =================
+function initVisitorStats() {
+    const statOnline = document.getElementById('stat-online');
+    const statVisitors = document.getElementById('stat-visitors');
+    const statViews = document.getElementById('stat-views');
+    
+    if (!statOnline || !statVisitors || !statViews) return;
+
+    // TODO: Connect to Real Backend (Firebase / Node.js) to fetch real statistics.
+    // Currently displaying static numbers until a backend is integrated.
 }
