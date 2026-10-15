@@ -6,10 +6,12 @@ const MOCK_PRODUCTS = [
         image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=600&auto=format&fit=crop",
         category: "phone",
         hot: true,
+        flashSale: true,
+        discount: "-18%",
         prices: [
-            { platform: "shopee", price: 29590000, link: "https://shopee.vn/affiliate-mock-link" },
-            { platform: "tiki", price: 29490000, link: "https://tiki.vn/affiliate-mock-link" },
-            { platform: "lazada", price: 29800000, link: "https://lazada.vn/affiliate-mock-link" }
+            { platform: "shopee", price: 29590000, link: "https://shopee.vn" },
+            { platform: "tiki", price: 29490000, link: "https://tiki.vn" },
+            { platform: "lazada", price: 29800000, link: "https://lazada.vn" }
         ]
     },
     {
@@ -18,10 +20,12 @@ const MOCK_PRODUCTS = [
         image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=600&auto=format&fit=crop",
         category: "audio",
         hot: true,
+        flashSale: true,
+        discount: "-25%",
         prices: [
-            { platform: "lazada", price: 7290000, link: "https://lazada.vn/affiliate" },
-            { platform: "tiktok", price: 7450000, link: "https://tiktok.com/affiliate" },
-            { platform: "shopee", price: 7350000, link: "https://shopee.vn/affiliate" }
+            { platform: "lazada", price: 7290000, link: "https://lazada.vn" },
+            { platform: "tiktok", price: 7450000, link: "https://tiktok.com" },
+            { platform: "shopee", price: 7350000, link: "https://shopee.vn" }
         ]
     },
     {
@@ -32,44 +36,74 @@ const MOCK_PRODUCTS = [
         hot: true,
         discount: "Giảm 2tr",
         prices: [
-            { platform: "shopee", price: 12990000, link: "#" },
-            { platform: "lazada", price: 13150000, link: "#" }
+            { platform: "shopee", price: 12990000, link: "https://shopee.vn" },
+            { platform: "lazada", price: 13150000, link: "https://lazada.vn" }
         ]
     },
     {
         id: "p4",
-        title: "Laptop Apple MacBook Air M3 2024 8GB/256GB",
+        title: "Laptop Apple MacBook Air M3 2024 8GB/256GB Chính Hãng",
         image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=600&auto=format&fit=crop",
         category: "laptop",
-        hot: false,
+        hot: true,
+        flashSale: true,
+        discount: "-15%",
         prices: [
-            { platform: "tiki", price: 26990000, link: "#" },
-            { platform: "shopee", price: 27200000, link: "#" },
-            { platform: "tiktok", price: 27500000, link: "#" }
+            { platform: "tiki", price: 26990000, link: "https://tiki.vn" },
+            { platform: "shopee", price: 27200000, link: "https://shopee.vn" },
+            { platform: "tiktok", price: 27500000, link: "https://tiktok.com" }
         ]
     },
     {
         id: "p5",
-        title: "Son kem lì MAC Powder Kiss Liquid Lipcolour",
+        title: "Son kem lì MAC Powder Kiss Liquid Lipcolour Siêu Mịn Môi",
         image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=600&auto=format&fit=crop",
         category: "beauty",
         hot: true,
+        flashSale: true,
+        discount: "-30%",
         prices: [
-            { platform: "lazada", price: 650000, link: "#" },
-            { platform: "tiktok", price: 590000, link: "#" },
-            { platform: "shopee", price: 680000, link: "#" }
+            { platform: "lazada", price: 590000, link: "https://lazada.vn" },
+            { platform: "tiktok", price: 620000, link: "https://tiktok.com" },
+            { platform: "shopee", price: 650000, link: "https://shopee.vn" }
         ]
     },
     {
         id: "p6",
-        title: "Nồi Chiên Không Dầu Philips HD9252/90 4.1L",
+        title: "Nồi Chiên Không Dầu Philips HD9252/90 4.1L Công Nghệ Rapid Air",
         image: "https://images.unsplash.com/photo-1621255866170-c752ba119c3f?q=80&w=600&auto=format&fit=crop",
         category: "home",
         hot: false,
         discount: "Freeship",
         prices: [
-            { platform: "tiki", price: 1490000, link: "#" },
-            { platform: "shopee", price: 1550000, link: "#" }
+            { platform: "tiki", price: 1490000, link: "https://tiki.vn" },
+            { platform: "shopee", price: 1550000, link: "https://shopee.vn" }
+        ]
+    },
+    {
+        id: "p7",
+        title: "Loa Bluetooth Marshall Acton III Âm Thanh Đỉnh Cao Vintage",
+        image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=600&auto=format&fit=crop",
+        category: "audio",
+        hot: true,
+        discount: "Quà tặng 500k",
+        prices: [
+            { platform: "shopee", price: 5890000, link: "https://shopee.vn" },
+            { platform: "lazada", price: 5950000, link: "https://lazada.vn" },
+            { platform: "tiktok", price: 6100000, link: "https://tiktok.com" }
+        ]
+    },
+    {
+        id: "p8",
+        title: "Robot Hút Bụi Lau Nhà Roborock Q Revo Tự Giặt Sấy Giẻ",
+        image: "https://images.unsplash.com/photo-1558317374-067fb5f30001?q=80&w=600&auto=format&fit=crop",
+        category: "home",
+        hot: true,
+        discount: "Voucher 1tr",
+        prices: [
+            { platform: "shopee", price: 14490000, link: "https://shopee.vn" },
+            { platform: "tiki", price: 14800000, link: "https://tiki.vn" },
+            { platform: "lazada", price: 14650000, link: "https://lazada.vn" }
         ]
     }
 ];
@@ -77,10 +111,9 @@ const MOCK_PRODUCTS = [
 const I18N = {
     vi: {
         'nav-1': 'Trang Chủ', 'nav-2': 'Danh Mục', 'nav-3': 'Hot Deal', 'nav-4': 'Vừa Xem',
-        'hero-t1': 'Tìm Giá Tốt Nhất.', 'hero-t2': 'Chỉ Bằng Một Lần Chạm.',
-        'hero-sub': 'Hệ thống tổng hợp deal sốc, mã giảm giá và siêu ưu đãi thời gian thực từ các sàn TMĐT lớn nhất — Shopee, Lazada, Tiki, TikTok Shop.',
-        'stat-1': 'SẢN PHẨM', 'stat-2': 'SÀN TMĐT', 'stat-3': 'TIẾT KIỆM', 'stat-4': 'NGƯỜI DÙNG',
-        'search-placeholder': 'Nhập tên sản phẩm (VD: iPhone 15, Sony WH-1000XM5, Son MAC...)',
+        'hero-t1': 'So Sánh & Săn Deal', 'hero-t2': 'Rẻ Hơn Đến 50%',
+        'hero-sub': 'Hệ thống tự động quét và so sánh biến động giá theo thời gian thực từ <strong>Shopee, Lazada, Tiki, TikTok Shop</strong> — đảm bảo bạn luôn mua với giá rẻ nhất!',
+        'search-placeholder': 'Tìm kiếm sản phẩm (iPhone 15, Sony WH-1000XM5, Son MAC...)',
         'search-btn': '<i class="fa-solid fa-bolt"></i> So Sánh Ngay',
         'search-tags-label': 'Gợi ý:',
         'cat-label': 'Danh Mục Phổ Biến',
@@ -97,19 +130,18 @@ const I18N = {
         'redir-small1': 'Nếu trình duyệt không tự chuyển, ', 'redir-small2': 'bấm vào đây',
         'foot-desc': 'Nền tảng tổng hợp ưu đãi và khuyến mãi mỗi ngày. Giúp bạn săn deal cực hời và mua sắm siêu tiết kiệm từ các sàn TMĐT hàng đầu Việt Nam.',
         'foot-h3-1': 'Về chúng tôi', 'foot-l1-1': 'Giới thiệu nền tảng', 'foot-l1-2': 'Liên hệ hỗ trợ', 'foot-l1-3': 'Chính sách bảo mật', 'foot-l1-4': 'Điều khoản sử dụng',
-        'foot-h3-2': 'Đối tác', 'foot-l2-1': 'Trở thành Affiliate', 'foot-l2-2': 'API Săn Deal', 'foot-l2-3': 'Quảng cáo sản phẩm', 'foot-l2-4': 'Blog chia sẻ',
-        'foot-copy': '© 2026 TìmGiáTốt — Mọi quyền được bảo lưu.',
+        'foot-h3-2': 'Đối tác', 'foot-l2-1': 'Trở thành Affiliate', 'foot-l2-2': 'API DealNgon', 'foot-l2-3': 'Quảng cáo sản phẩm', 'foot-l2-4': 'Blog chia sẻ',
+        'foot-copy': '© 2026 DealNgon — Mọi quyền được bảo lưu.',
         'cat-phone': 'Điện Thoại', 'cat-laptop': 'Laptop', 'cat-audio': 'Tai Nghe', 'cat-beauty': 'Mỹ Phẩm', 'cat-home': 'Gia Dụng', 'cat-gaming': 'Gaming',
         'card-best-price': 'Giá tốt nhất từ:', 'card-buy': 'Tới nơi bán'
     },
     en: {
         'nav-1': 'Home', 'nav-2': 'Categories', 'nav-3': 'Trending', 'nav-4': 'Recent',
-        'hero-t1': 'Find Best Prices.', 'hero-t2': 'Just One Tap Away.',
-        'hero-sub': 'Real-time price analysis and comparison from top platforms — Shopee, Lazada, Tiki, TikTok Shop.',
-        'stat-1': 'PRODUCTS', 'stat-2': 'PLATFORMS', 'stat-3': 'SAVINGS', 'stat-4': 'USERS',
-        'search-placeholder': 'Enter product name (e.g. iPhone 15...)',
+        'hero-t1': 'Compare & Snag Deals', 'hero-t2': 'Save Up To 50%',
+        'hero-sub': 'Real-time price tracking and comparison across <strong>Shopee, Lazada, Tiki, TikTok Shop</strong> — always buy at the best price!',
+        'search-placeholder': 'Search products (e.g. iPhone 15, Sony WH-1000XM5...)',
         'search-btn': '<i class="fa-solid fa-bolt"></i> Compare Now',
-        'search-tags-label': 'Suggestions:',
+        'search-tags-label': 'Trending:',
         'cat-label': 'Popular Categories',
         'sort-label': 'Sort By',
         'sort-opt-1': 'Relevance', 'sort-opt-2': 'Price Low → High', 'sort-opt-3': 'Price High → Low',
@@ -124,8 +156,8 @@ const I18N = {
         'redir-small1': 'If not redirected automatically, ', 'redir-small2': 'click here',
         'foot-desc': 'Smart price comparison platform. Search, compare, and shop easily at the best prices from top e-commerce platforms in Vietnam.',
         'foot-h3-1': 'About Us', 'foot-l1-1': 'Platform Intro', 'foot-l1-2': 'Support Contact', 'foot-l1-3': 'Privacy Policy', 'foot-l1-4': 'Terms of Use',
-        'foot-h3-2': 'Partners', 'foot-l2-1': 'Become an Affiliate', 'foot-l2-2': 'Price API', 'foot-l2-3': 'Advertising', 'foot-l2-4': 'Blog',
-        'foot-copy': '© 2026 TimGiaTot — All rights reserved.',
+        'foot-h3-2': 'Partners', 'foot-l2-1': 'Become an Affiliate', 'foot-l2-2': 'Deal API', 'foot-l2-3': 'Advertising', 'foot-l2-4': 'Blog',
+        'foot-copy': '© 2026 DealNgon — All rights reserved.',
         'cat-phone': 'Phones', 'cat-laptop': 'Laptops', 'cat-audio': 'Audio', 'cat-beauty': 'Beauty', 'cat-home': 'Home', 'cat-gaming': 'Gaming',
         'card-best-price': 'Best price from:', 'card-buy': 'Go to store'
     }
@@ -158,12 +190,21 @@ const formatPrice = (price) => new Intl.NumberFormat('vi-VN', { style: 'currency
 const getBestPrice = (prices) => Math.min(...prices.map(p => p.price));
 const sortPrices = (prices) => [...prices].sort((a, b) => a.price - b.price);
 
+const VOUCHERS = [
+    { code: 'SHOPEE50K', title: 'Giảm 50.000₫ đơn từ 250k', sub: 'Toàn sàn Shopee Mall', platform: 'shopee' },
+    { code: 'LAZADA10', title: 'Giảm 10% tối đa 100k', sub: 'Áp dụng mọi ngành hàng', platform: 'lazada' },
+    { code: 'TIKIFREE', title: 'Miễn phí vận chuyển 0đ', sub: 'Đơn từ 149k toàn quốc', platform: 'tiki' },
+    { code: 'TIKTOK30K', title: 'Giảm 30.000₫ Flash Sale', sub: 'Livestream & Video TikTok', platform: 'tiktok' }
+];
+
 document.addEventListener('DOMContentLoaded', () => {
     initApp();
 });
 
 function initApp() {
     renderCategories();
+    renderFlashSale();
+    renderVouchers();
     renderTrending();
     renderSearchTags();
     setupEventListeners();
@@ -172,6 +213,9 @@ function initApp() {
     initParticles();
     setupHeaderScroll();
     initVisitorStats();
+    initCountdown();
+    setupBackToTop();
+    initScrollReveal();
 }
 
 function updateLanguageUI() {
@@ -189,11 +233,7 @@ function updateLanguageUI() {
 
     const ht = document.querySelector('.hero-title');
     if(ht) ht.innerHTML = t['hero-t1'] + '\n<span class="line2">' + t['hero-t2'] + '</span>';
-    set('.hero-subtitle', 'hero-sub');
-    set('.stat-item:nth-child(1) .stat-label', 'stat-1');
-    set('.stat-item:nth-child(3) .stat-label', 'stat-2');
-    set('.stat-item:nth-child(5) .stat-label', 'stat-3');
-    set('.stat-item:nth-child(7) .stat-label', 'stat-4');
+    set('.hero-subtitle', 'hero-sub', true);
     
     setPl('#searchInput', 'search-placeholder');
     const tags = document.querySelector('.search-tags span:first-child');
@@ -244,6 +284,8 @@ function updateLanguageUI() {
         opt.classList.toggle('active', opt.dataset.lang === currentLang);
     });
     renderCategories();
+    renderFlashSale();
+    renderVouchers();
     renderTrending();
     if (document.getElementById('recent').style.display !== 'none') loadRecent();
     
@@ -400,8 +442,120 @@ function renderCategories() {
 
 function renderTrending() {
     const grid = document.getElementById('trendingGrid');
+    if (!grid) return;
     const trendingProducts = MOCK_PRODUCTS.filter(p => p.hot);
     grid.innerHTML = trendingProducts.map((p, idx) => createProductCard(p, idx)).join('');
+}
+
+function renderFlashSale() {
+    const grid = document.getElementById('flashSaleGrid');
+    if (!grid) return;
+    const flashProducts = MOCK_PRODUCTS.filter(p => p.flashSale || p.discount);
+    grid.innerHTML = flashProducts.map((p, idx) => createProductCard(p, idx)).join('');
+}
+
+function renderVouchers() {
+    const grid = document.getElementById('voucherGrid');
+    if (!grid) return;
+    grid.innerHTML = VOUCHERS.map(v => `
+        <div class="voucher-card ${v.platform}">
+            <div class="voucher-details">
+                <span class="voucher-badge">${PLATFORM_NAMES[v.platform]}</span>
+                <h5>${v.title}</h5>
+                <p>${v.sub}</p>
+            </div>
+            <button class="btn-copy-voucher" onclick="copyVoucher('${v.code}', this)">
+                <i class="fa-solid fa-copy"></i> Lưu mã
+            </button>
+        </div>
+    `).join('');
+}
+
+window.showToast = function(msg, icon = 'fa-solid fa-circle-check') {
+    const toast = document.getElementById('toastNotification');
+    const msgEl = document.getElementById('toastMessage');
+    if (!toast || !msgEl) return;
+    
+    msgEl.textContent = msg;
+    const iconEl = toast.querySelector('i');
+    if (iconEl) iconEl.className = icon;
+
+    toast.classList.add('active');
+    clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => {
+        toast.classList.remove('active');
+    }, 2400);
+};
+
+window.copyVoucher = function(code, btn) {
+    navigator.clipboard.writeText(code).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Đã lưu';
+        btn.classList.add('copied');
+        showToast(`Đã sao chép mã voucher ${code}!`);
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.classList.remove('copied');
+        }, 2000);
+    }).catch(() => {
+        showToast(`Mã voucher: ${code}`);
+    });
+};
+
+function initCountdown() {
+    const hEl = document.getElementById('timerHours');
+    const mEl = document.getElementById('timerMinutes');
+    const sEl = document.getElementById('timerSeconds');
+    if (!hEl || !mEl || !sEl) return;
+
+    let totalSeconds = 4 * 3600 + 28 * 60 + 15;
+    setInterval(() => {
+        if (totalSeconds <= 0) totalSeconds = 8 * 3600;
+        totalSeconds--;
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        hEl.textContent = String(hours).padStart(2, '0');
+        mEl.textContent = String(minutes).padStart(2, '0');
+        sEl.textContent = String(seconds).padStart(2, '0');
+    }, 1000);
+}
+
+function setupBackToTop() {
+    const btn = document.getElementById('btnBackToTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 350) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+function initScrollReveal() {
+    const elementsToReveal = document.querySelectorAll('.features-bar, .flash-sale-box, .voucher-card, .categories-section, .trending-section');
+    elementsToReveal.forEach(el => el.classList.add('reveal-on-scroll'));
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    elementsToReveal.forEach(el => observer.observe(el));
 }
 
 function renderSearchTags() {

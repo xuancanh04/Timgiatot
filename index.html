@@ -20,6 +20,8 @@
         <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
         <nav class="mobile-nav">
             <a href="#" class="active"><i class="fa-solid fa-house"></i> Trang Chủ</a>
+            <a href="#flashSale"><i class="fa-solid fa-bolt"></i> Flash Sale</a>
+            <a href="#vouchers"><i class="fa-solid fa-ticket"></i> Mã Giảm Giá</a>
             <a href="#categories"><i class="fa-solid fa-grid-2"></i> Danh Mục</a>
             <a href="#trending"><i class="fa-solid fa-fire"></i> Sản Phẩm Hot</a>
             <a href="#recent"><i class="fa-solid fa-clock-rotate-left"></i> Vừa Xem</a>
@@ -82,63 +84,155 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Dual Column & Featured Banner -->
     <section class="hero">
-        <div class="container hero-content">
-
-
-
-            <h1 class="hero-title">
-                Tìm Giá Tốt Nhất.
-                <span class="line2">Chỉ Bằng Một Lần Chạm.</span>
-            </h1>
-
-            <p class="hero-subtitle">
-                Hệ thống phân tích và so sánh giá thời gian thực từ các sàn TMĐT lớn nhất — Shopee, Lazada, Tiki, TikTok Shop.
-            </p>
-
-            <!-- Stats -->
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number">500K+</div>
-                    <div class="stat-label">SẢN PHẨM</div>
+        <div class="container hero-container-grid">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-bolt"></i> <span>Săn Deal Thông Minh Cùng DealNgon</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">4</div>
-                    <div class="stat-label">SÀN TMĐT</div>
+                <h1 class="hero-title">
+                    So Sánh & Săn Deal
+                    <span class="line2">Rẻ Hơn Đến 50%</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Hệ thống tự động quét và so sánh biến động giá theo thời gian thực từ <strong>Shopee, Lazada, Tiki, TikTok Shop</strong> — đảm bảo bạn luôn mua với giá rẻ nhất!
+                </p>
+
+                <!-- Search Suggestions Tags in Hero -->
+                <div class="hero-search-tags">
+                    <span class="tag-title"><i class="fa-solid fa-fire"></i> Tìm nhiều:</span>
+                    <button class="hero-quick-tag" onclick="triggerSearch('iPhone 15')">iPhone 15</button>
+                    <button class="hero-quick-tag" onclick="triggerSearch('Sony WH-1000XM5')">Tai nghe Sony</button>
+                    <button class="hero-quick-tag" onclick="triggerSearch('MacBook')">MacBook</button>
+                    <button class="hero-quick-tag" onclick="triggerSearch('Son MAC')">Son MAC</button>
+                    <button class="hero-quick-tag" onclick="triggerSearch('Nồi chiên')">Nồi chiên không dầu</button>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">TIẾT KIỆM</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-number">2M+</div>
-                    <div class="stat-label">NGƯỜI DÙNG</div>
+
+                <!-- Platform Badges -->
+                <div class="platform-badges">
+                    <div class="plat-badge"><span class="dot shopee-dot"></span> Shopee</div>
+                    <div class="plat-badge"><span class="dot lazada-dot"></span> Lazada</div>
+                    <div class="plat-badge"><span class="dot tiki-dot"></span> Tiki</div>
+                    <div class="plat-badge"><span class="dot tiktok-dot"></span> TikTok Shop</div>
                 </div>
             </div>
 
-            <!-- Search bar was moved to header -->
-
-            <!-- Platform Badges -->
-            <div class="platform-badges">
-                <div class="plat-badge"><span class="dot shopee-dot"></span> Shopee</div>
-                <div class="plat-badge"><span class="dot lazada-dot"></span> Lazada</div>
-                <div class="plat-badge"><span class="dot tiki-dot"></span> Tiki</div>
-                <div class="plat-badge"><span class="dot tiktok-dot"></span> TikTok Shop</div>
+            <div class="hero-right">
+                <div class="hero-promo-card">
+                    <div class="promo-header">
+                        <span class="promo-tag"><i class="fa-solid fa-award"></i> TOP DEAL HÔM NAY</span>
+                        <span class="promo-discount">-42%</span>
+                    </div>
+                    <div class="promo-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=600&auto=format&fit=crop" alt="iPhone 15 Pro Max" class="promo-img">
+                        <div class="promo-floating-badge shopee-badge">
+                            <i class="fa-solid fa-bag-shopping"></i> Rẻ nhất trên Shopee
+                        </div>
+                    </div>
+                    <div class="promo-body">
+                        <h4>Apple iPhone 15 Pro Max 256GB - VN/A</h4>
+                        <div class="promo-price-row">
+                            <span class="promo-current-price">29.490.000₫</span>
+                            <span class="promo-old-price">34.990.000₫</span>
+                        </div>
+                        <div class="promo-market-compare">
+                            <span><i class="fa-solid fa-arrow-trend-down"></i> Rẻ hơn sàn khác <strong>400.000₫</strong></span>
+                        </div>
+                        <button class="btn-hero-action" onclick="handleAffiliateClick('tiki', 'https://tiki.vn/affiliate-mock-link', 'p1')">
+                            <i class="fa-solid fa-cart-shopping"></i> Mua Ngay Giá Tốt
+                        </button>
+                    </div>
+                </div>
             </div>
+        </div>
 
+        <!-- Trust & Features Banner -->
+        <div class="container">
+            <div class="features-bar">
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="feat-text">
+                        <h4>Lịch Sử Biến Động Giá</h4>
+                        <p>Tránh bẫy tăng giá ảo trước sale</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-ticket"></i></div>
+                    <div class="feat-text">
+                        <h4>Kho Voucher Độc Quyền</h4>
+                        <p>Cập nhật mã giảm giá mỗi giờ</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-shield-check"></i></div>
+                    <div class="feat-text">
+                        <h4>Sản Phẩm Chính Hãng 100%</h4>
+                        <p>Chỉ gợi ý Mall & Shop uy tín</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feat-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="feat-text">
+                        <h4>Chuyển Hướng Siêu Tốc</h4>
+                        <p>Đưa thẳng tới trang thanh toán</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Categories Section -->
     <section class="categories-section" id="categories">
         <div class="container">
-            <p class="section-label">Danh Mục Phổ Biến</p>
+            <div class="section-header-compact">
+                <div>
+                    <h3 class="section-heading-text">Khám Phá Danh Mục</h3>
+                    <p class="section-subheading-text">Chọn danh mục bạn quan tâm để xem so sánh giá nhanh</p>
+                </div>
+            </div>
             <div class="categories-grid" id="categoriesGrid">
                 <!-- Categories generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Sale Giờ Vàng Section -->
+    <section class="flash-sale-section" id="flashSale">
+        <div class="container">
+            <div class="flash-sale-box">
+                <div class="flash-sale-header">
+                    <div class="flash-title-group">
+                        <span class="flash-badge"><i class="fa-solid fa-bolt"></i> FLASH SALE</span>
+                        <h2>Giá Sốc Hôm Nay</h2>
+                    </div>
+                    <div class="countdown-group">
+                        <span class="countdown-label">Kết thúc sau:</span>
+                        <div class="countdown-timer" id="flashCountdown">
+                            <span class="time-block" id="timerHours">04</span>:
+                            <span class="time-block" id="timerMinutes">28</span>:
+                            <span class="time-block" id="timerSeconds">15</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-grid flash-grid" id="flashSaleGrid">
+                    <!-- Flash sale products rendered here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voucher & Promo Codes Section -->
+    <section class="voucher-section" id="vouchers">
+        <div class="container">
+            <div class="section-title">
+                <div>
+                    <h2>Mã Giảm Giá <span>Hot Nhất</span> 🎁</h2>
+                    <p class="section-subtitle-clean">Lưu ngay voucher số lượng có hạn từ các sàn hàng đầu</p>
+                </div>
+            </div>
+            <div class="voucher-grid" id="voucherGrid">
+                <!-- Vouchers generated dynamically -->
             </div>
         </div>
     </section>
@@ -281,6 +375,17 @@
             <p>© 2026 DealNgon — Mọi quyền được bảo lưu.</p>
         </div>
     </footer>
+
+    <!-- Back to Top Floating Button -->
+    <button class="back-to-top" id="btnBackToTop" title="Lên đầu trang">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Global Floating Toast Notification -->
+    <div class="toast-notification" id="toastNotification">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMessage">Thông báo</span>
+    </div>
 
     <script type="module" src="/script.js"></script>
 </body>
